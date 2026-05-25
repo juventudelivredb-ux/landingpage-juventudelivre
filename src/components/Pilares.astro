@@ -1,0 +1,314 @@
+---
+/* Pilares Section — Asymmetric Bento Grid representing the 5 Brand Pillars */
+---
+
+<section
+  id="valores"
+  class="relative py-28 md:py-40 overflow-hidden bg-[#070709]"
+  aria-labelledby="pillars-heading"
+>
+  <!-- Background grids and outline watermarks -->
+  <div class="absolute inset-0 opacity-[0.015] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:40px_40px]" aria-hidden="true"></div>
+  
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style="background:
+      radial-gradient(ellipse at 50% 20%, rgba(230,192,0,0.02) 0%, transparent 60%),
+      radial-gradient(ellipse at 10% 80%, rgba(230,192,0,0.01) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 80%, rgba(230,192,0,0.015) 0%, transparent 50%);"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Background Board Members Floating Collage -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+    <!-- Soft golden and dark radial ambient lights behind the floating pictures -->
+    <div class="absolute top-[15%] left-[5%] w-[400px] h-[400px] rounded-full bg-accent/[0.03] filter blur-[100px]"></div>
+    <div class="absolute top-[45%] right-[5%] w-[500px] h-[500px] rounded-full bg-accent/[0.02] filter blur-[120px]"></div>
+    <div class="absolute bottom-[15%] left-[20%] w-[450px] h-[450px] rounded-full bg-accent/[0.03] filter blur-[110px]"></div>
+
+    <!-- Floating Board Members Portraits (Properly scaled, never squished, responsive) -->
+    <!-- 1. Bruno Sperancetta (Presidente) - Top Left -->
+    <div class="absolute top-[8%] left-[-15%] md:left-[2%] w-48 md:w-80 aspect-[3/4] opacity-20 md:opacity-25 grayscale transition-all duration-700 rounded-3xl overflow-hidden border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.8)] transform -rotate-6 parallax-item" data-speed="0.04" data-rotation="-6">
+      <img src="/imgpessoas/mesaDiretora/Bruno_Sperancetta_Presidente.jpeg" alt="" width="320" height="427" loading="lazy" class="w-full h-full object-cover object-top" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+    </div>
+
+    <!-- 2. Beatriz Vaz (Secretária Geral) - Top Right -->
+    <div class="absolute top-[22%] right-[-12%] md:right-[3%] w-44 md:w-72 aspect-[3/4] opacity-15 md:opacity-20 grayscale transition-all duration-700 rounded-3xl overflow-hidden border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.8)] transform rotate-3 parallax-item" data-speed="-0.03" data-rotation="3">
+      <img src="/imgpessoas/mesaDiretora/Beatriz_Vaz_Secretaria_Geral.jpeg" alt="" width="288" height="384" loading="lazy" class="w-full h-full object-cover object-top" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+    </div>
+
+    <!-- 3. Rafael Nunes (Vice Presidente) - Mid Left -->
+    <div class="absolute top-[48%] left-[-10%] md:left-[4%] w-40 md:w-72 aspect-[3/4] opacity-15 md:opacity-20 grayscale transition-all duration-700 rounded-3xl overflow-hidden border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.8)] transform rotate-6 parallax-item" data-speed="0.05" data-rotation="6">
+      <img src="/imgpessoas/mesaDiretora/Rafael_Nunes_Vice_Presidente.jpeg" alt="" width="288" height="384" loading="lazy" class="w-full h-full object-cover object-top" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+    </div>
+
+    <!-- 4. Ramon (Tesoureiro) - Mid Right -->
+    <div class="absolute top-[62%] right-[-8%] md:right-[2%] w-40 md:w-64 aspect-[3/4] opacity-15 md:opacity-20 grayscale transition-all duration-700 rounded-3xl overflow-hidden border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.8)] transform -rotate-3 parallax-item" data-speed="-0.04" data-rotation="-3">
+      <img src="/imgpessoas/mesaDiretora/Ramon_Tesoureiro.jpeg" alt="" width="256" height="341" loading="lazy" class="w-full h-full object-cover object-top" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+    </div>
+
+    <!-- 5. Sara Eduarda (1ª Secretária) - Bottom Left/Center -->
+    <div class="absolute bottom-[6%] left-[-5%] md:left-[15%] w-44 md:w-72 aspect-[3/4] opacity-15 md:opacity-20 grayscale transition-all duration-700 rounded-3xl overflow-hidden border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.8)] transform rotate-8 parallax-item" data-speed="0.03" data-rotation="8">
+      <img src="/imgpessoas/mesaDiretora/Sara_Eduarda_Almeida_1_Secretaria.jpeg" alt="" width="288" height="384" loading="lazy" class="w-full h-full object-cover object-top" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+    </div>
+
+    <!-- Soft dark gradient masks for premium legibility and blending -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#070709] via-transparent to-[#070709] z-10 pointer-events-none"></div>
+  </div>
+
+  <!-- Decorative horizontal dividers -->
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" aria-hidden="true"></div>
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/10 to-transparent" aria-hidden="true"></div>
+
+  <div class="section-container relative z-10">
+    <!-- Header -->
+    <div class="max-w-4xl mb-20">
+      <div class="reveal" data-reveal>
+        <span class="inline-block px-3 py-1 border border-accent/20 rounded-full text-[10px] font-semibold tracking-[0.2em] uppercase text-accent bg-accent/5 mb-6">
+          Nossos Compromissos
+        </span>
+      </div>
+      <h2
+        id="pillars-heading"
+        class="reveal reveal-d1 font-heading text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.05] tracking-tight mb-8"
+        data-reveal
+      >
+        SE VOCÊ DEFENDE ESSES CINCO ITENS,<br />
+        A <span class="text-accent">JUVENTUDE LIVRE</span> É A SUA CASA!
+      </h2>
+      <div class="reveal reveal-d2 accent-line mb-8" data-reveal aria-hidden="true"></div>
+    </div>
+
+    <!-- Asymmetric Bento Grid (6-column system) -->
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-6 w-full">
+      
+      <!-- Pilar 1: Liberdade de Expressão (Spans 2/6 columns) -->
+      <div class="reveal md:col-span-2" data-reveal>
+        <div class="card-shell h-full">
+          <div class="card-core h-full flex flex-col items-center text-center min-h-[300px] overflow-hidden">
+            <!-- Card image banner (~25% of card height) -->
+            <div class="w-full h-[100px] relative overflow-hidden rounded-t-[calc(1.5rem-0.375rem)] flex-shrink-0">
+              <img src="/pilares-liberdade.jpg" alt="" class="w-full h-full object-cover object-center opacity-60" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(0,0,0,0.6)]"></div>
+            </div>
+            <div class="p-8 flex flex-col items-center justify-center flex-grow">
+              <span class="text-xs uppercase tracking-wider text-accent font-semibold block mb-2">Pilar 01</span>
+              <h3 class="font-heading text-xl text-white mb-6">LIBERDADE DE EXPRESSÃO</h3>
+
+              <p class="text-sm text-text-muted leading-relaxed">
+                Somos contra qualquer limitação ou censura de natureza política, ideológica, artística, religiosa ou de expressão do pensamento.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pilar 2: Dignidade Humana (Spans 2/6 columns - Highlighted Card) -->
+      <div class="reveal reveal-d1 md:col-span-2" data-reveal>
+        <div class="card-shell highlighted-card-shell h-full">
+          <div class="card-core highlighted-card-core h-full flex flex-col items-center text-center min-h-[300px] overflow-hidden">
+            <!-- Card image banner (~25% of card height) -->
+            <div class="w-full h-[100px] relative overflow-hidden rounded-t-[calc(1.5rem-0.375rem)] flex-shrink-0">
+              <img src="/pilares-dignidade.jpg" alt="" class="w-full h-full object-cover object-center opacity-60" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(0,0,0,0.6)]"></div>
+            </div>
+            <div class="p-8 flex flex-col items-center justify-center flex-grow">
+              <span class="text-xs uppercase tracking-wider text-accent font-semibold block mb-2">Pilar 02</span>
+              <h3 class="font-heading text-xl text-white mb-6">DIGNIDADE HUMANA</h3>
+
+              <p class="text-sm text-text-muted leading-relaxed">
+                Defendemos a soberania, a cidadania, a dignidade da pessoa humana, os valores sociais do trabalho e da livre iniciativa e o pluralismo político, bem como descritos na Constituição de 1988. Entendemos como direitos fundamentais: direito à vida, à propriedade privada, à liberdade, à saúde e à vida digna.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pilar 3: Defesa do Estado de Direito (Spans 2/6 columns) -->
+      <div class="reveal reveal-d2 md:col-span-2" data-reveal>
+        <div class="card-shell h-full">
+          <div class="card-core h-full flex flex-col items-center text-center min-h-[300px] overflow-hidden">
+            <!-- Card image banner (~25% of card height) -->
+            <div class="w-full h-[100px] relative overflow-hidden rounded-t-[calc(1.5rem-0.375rem)] flex-shrink-0">
+              <img src="/pilares-justica.jpg" alt="" class="w-full h-full object-cover object-center opacity-60" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(0,0,0,0.6)]"></div>
+            </div>
+            <div class="p-8 flex flex-col items-center justify-center flex-grow">
+              <span class="text-xs uppercase tracking-wider text-accent font-semibold block mb-2">Pilar 03</span>
+              <h3 class="font-heading text-xl text-white mb-6">ESTADO DE DIREITO & LIBERDADES CIVIS</h3>
+
+              <p class="text-sm text-text-muted leading-relaxed">
+                Entendemos que assim é possível a existência do respeito às liberdades civis através de um sistema judiciário que atenda aos interesses da população, inibindo a tirania dos agentes estatais.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pilar 4: Combate a LGBTfobia e Violência (Spans 3/6 columns - Highlighted Card) -->
+      <div class="reveal md:col-span-3" data-reveal>
+        <div class="card-shell highlighted-card-shell h-full">
+          <div class="card-core highlighted-card-core h-full flex flex-col items-center text-center min-h-[280px] overflow-hidden">
+            <!-- Card image banner (~25% of card height) -->
+            <div class="w-full h-[100px] relative overflow-hidden rounded-t-[calc(1.5rem-0.375rem)] flex-shrink-0">
+              <img src="/pilares-lgbt.jpg" alt="" class="w-full h-full object-cover object-[50%_30%] opacity-60" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(0,0,0,0.6)]"></div>
+            </div>
+            <div class="p-8 flex flex-col items-center justify-center flex-grow">
+              <span class="text-xs uppercase tracking-wider text-accent font-semibold block mb-2">Pilar 04</span>
+              <h3 class="font-heading text-xl text-white mb-6">COMBATE A LGBTFOBIA & VIOLÊNCIA CONTRA A MULHER</h3>
+
+              <p class="text-sm text-text-muted leading-relaxed">
+                Fomentamos incansavelmente a luta contra violência física, psicológica, emocional e política sofrida por ambas as classes, e isso fará de nós cada vez mais livres para sermos quem somos, da forma que queremos ser.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pilar 5: Assistência Estudantil (Spans 3/6 columns) -->
+      <div class="reveal reveal-d1 md:col-span-3" data-reveal>
+        <div class="card-shell h-full">
+          <div class="card-core h-full flex flex-col items-center text-center min-h-[280px] overflow-hidden">
+            <!-- Card image banner (~25% of card height) -->
+            <div class="w-full h-[100px] relative overflow-hidden rounded-t-[calc(1.5rem-0.375rem)] flex-shrink-0">
+              <img src="/pilares-assistencia.jpg" alt="" class="w-full h-full object-cover object-center opacity-60" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(0,0,0,0.6)]"></div>
+            </div>
+            <div class="p-8 flex flex-col items-center justify-center flex-grow">
+              <span class="text-xs uppercase tracking-wider text-accent font-semibold block mb-2">Pilar 05</span>
+              <h3 class="font-heading text-xl text-white mb-6">ASSISTÊNCIA ESTUDANTIL</h3>
+
+              <p class="text-sm text-text-muted leading-relaxed">
+                Temos como objetivo defender as bolsas e assistências estudantis já conquistadas pelos alunos e ampliar as mesmas, através de incentivos fiscais para empresas privadas financiarem estudantes em situação de vulnerabilidade.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Premium glassmorphism cards — semi-transparent white + backdrop blur */
+  #valores .card-shell {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    border-top: 2px solid rgba(230, 192, 0, 0.5) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25) !important;
+    backdrop-filter: blur(16px) saturate(1.2) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(1.2) !important;
+    transition: 
+      border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      background 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  
+  #valores .card-shell:hover {
+    background: rgba(255, 255, 255, 0.18) !important;
+    border-color: rgba(230, 192, 0, 0.35) !important;
+    border-top-color: rgba(230, 192, 0, 0.7) !important;
+    transform: translateY(-4px) !important;
+    box-shadow: 
+      0 20px 48px rgba(0, 0, 0, 0.35),
+      0 0 30px rgba(230, 192, 0, 0.06) !important;
+  }
+  
+  #valores .card-core {
+    background: rgba(255, 255, 255, 0.06) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+    transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  
+  #valores .card-shell:hover .card-core {
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  /* Text — high contrast white on frosted glass */
+  #valores .card-core h3 {
+    color: #ffffff !important;
+  }
+
+  #valores .card-core p {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  
+  #valores .card-core span {
+    color: #e6c000 !important;
+  }
+  
+  /* Icons — bright gold on glass */
+  #valores .card-core svg {
+    color: #e6c000 !important;
+  }
+  
+  #valores .icon-box-wrapper {
+    background-color: rgba(230, 192, 0, 0.08) !important;
+    border-color: rgba(230, 192, 0, 0.2) !important;
+    box-shadow: 0 0 12px rgba(230, 192, 0, 0.04) !important;
+  }
+
+  /* Highlighted card shells — stronger gold accent */
+  #valores .highlighted-card-shell {
+    border-color: rgba(230, 192, 0, 0.25) !important;
+    border-top: 2px solid rgba(230, 192, 0, 0.7) !important;
+    background: rgba(255, 255, 255, 0.14) !important;
+  }
+  
+  #valores .highlighted-card-shell:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-top-color: #e6c000 !important;
+  }
+
+  #valores .highlighted-card-core {
+    background: radial-gradient(circle at top left, rgba(230, 192, 0, 0.06), transparent 70%) !important;
+  }
+
+  #valores .highlighted-card-shell:hover .highlighted-card-core {
+    background: radial-gradient(circle at top left, rgba(230, 192, 0, 0.1), transparent 70%) !important;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const section = document.getElementById("valores");
+    if (!section) return;
+
+    const items = section.querySelectorAll(".parallax-item") as NodeListOf<HTMLElement>;
+    let animationFrameId: number | null = null;
+
+    const handleScroll = () => {
+      const rect = section.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      if (rect.top < viewportHeight && rect.bottom > 0) {
+        items.forEach((item) => {
+          const speed = parseFloat(item.getAttribute("data-speed") || "0.05");
+          const rot = parseFloat(item.getAttribute("data-rotation") || "0");
+          const yOffset = (rect.top - viewportHeight) * speed;
+          item.style.transform = `translateY(${yOffset}px) rotate(${rot}deg)`;
+        });
+      }
+    };
+
+    const onScroll = () => {
+      if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      animationFrameId = requestAnimationFrame(handleScroll);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    // Initial trigger
+    handleScroll();
+  });
+</script>

@@ -1,0 +1,28 @@
+# Astro build outputs and cache
+.astro/
+dist/
+
+# Package dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Agent temporary files and scratch scripts
+.agents/
+scratch/
+skills-lock.json
+*.pdf
+Fotos boas JL-20260520T003430Z-3-001/
+LogoEstados-20260514T234328Z-3-001/
+LogoNacional-20260514T234319Z-3-001/
+imgpessoas/
+projeto_corrigido/

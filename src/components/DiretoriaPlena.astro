@@ -1,0 +1,260 @@
+﻿---
+const diretores = [
+  { 
+    pos: "01", 
+    role: "Diretor de OperaÃ§Ãµes", 
+    name: "Ivson Filho", 
+    img: "/Diretoria Plena/Ivson Filho  Diretor de Operações.jpeg", 
+    desc: "Coordena a estrutura operacional nacional, garantindo a eficiência das ações e o alinhamento logístico da Juventude Livre em todo o país." 
+  },
+  { 
+    pos: "02", 
+    role: "Lí­der Nacional Secundarista", 
+    name: "Arthur Sarrassini", 
+    img: "/Diretoria Plena/Arthur Sarrassini - Diretor Nacional Secundarista.jpeg", 
+    desc: "Representa e articula os estudantes do ensino médio, defendendo a liberdade e a autonomia estudantil nas escolas." 
+  },
+  { 
+    pos: "03", 
+    role: "Diretor de Formação Política", 
+    name: "Yan Chagas", 
+    img: "/Diretoria Plena/Yan Chagas - Diretor de Formação Política.jpeg", 
+    desc: "Desenvolve o programa de capacitação contínua, garantindo a solidez teórica e preparando as novas lideranças do movimento." 
+  },
+  { 
+    pos: "04", 
+    role: "Diretor de Comunicações", 
+    name: "Vitor Braga", 
+    img: "/Diretoria Plena/Diretor de Comunicação - Vitor Braga.jpeg", 
+    desc: "Lidera a estratégia de comunicação digital, produzindo narrativas e ampliando a voz da Juventude Livre nas redes e na imprensa." 
+  }
+];
+---
+
+<section id="diretoria-plena" class="mesa-section relative z-10 w-full overflow-hidden">
+  <div class="section-container mesa-content relative mx-auto z-10">
+    <!-- CabeÃ§alho -->
+    <div class="flex flex-col items-center text-center mb-16 md:mb-24 reveal" data-reveal>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="eyebrow">GESTÃƒO 2025â€“2026</span>
+        <div class="accent-line"></div>
+      </div>
+      <h2 class="title">
+        DIRETORIA <span class="title-highlight">/</span> <span class="title-highlight">PLENA</span>
+      </h2>
+      <p class="text-text-muted text-sm md:text-base leading-relaxed max-w-2xl mt-6">
+        A Diretoria Plena Ã© o corpo executivo responsÃ¡vel por operacionalizar as estratÃ©gias da Juventude Livre em todo o territÃ³rio nacional. AtravÃ©s de lideranÃ§as dedicadas, coordenamos a expansÃ£o nas escolas e universidades, garantindo a solidez da formaÃ§Ã£o polÃ­tica, a eficiÃªncia operacional e o impacto da nossa comunicaÃ§Ã£o na defesa incansÃ¡vel da liberdade.
+      </p>
+    </div>
+
+    <!-- Grid de membros (4 colunas desktop, 2 mobile) -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-[1000px] mx-auto">
+      {diretores.map((member, index) => (
+        <div class={`reveal reveal-d${index + 1}`} data-reveal>
+          <div class="card-shell h-full">
+            <div class="card-core overflow-hidden group h-full">
+               <div class="secondary-img-container relative">
+                  {member.img ? (
+                    <img 
+                      src={member.img} 
+                      alt={member.name} 
+                      class="member-img absolute inset-0 w-full h-full object-cover object-top" 
+                      loading="lazy" 
+                    />
+                  ) : (
+                    <div class="absolute inset-0 w-full h-full bg-[#111] flex items-center justify-center">
+                      <svg class="w-12 h-12 text-white/10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                      </svg>
+                    </div>
+                  )}
+                  <!-- Hover Description Overlay -->
+                  <div class="member-desc-overlay">
+                    <p class="desc-text">{member.desc}</p>
+                  </div>
+               </div>
+               <div class="card-info flex-grow relative z-10">
+                  <span class="card-number">{member.pos}</span>
+                  <div class="card-position">{member.role}</div>
+                  <div class="card-name">{member.name}</div>
+               </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .mesa-section {
+    background-color: var(--color-bg);
+    padding: 48px 20px 112px 20px;
+  }
+  @media (max-width: 700px) {
+    .mesa-section {
+      padding: 48px 20px;
+    }
+  }
+
+  .mesa-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+    z-index: 0;
+  }
+
+  .accent-line {
+    width: 40px;
+    height: 1px;
+    background-color: var(--color-accent);
+  }
+
+  .eyebrow {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: var(--color-accent);
+    text-transform: uppercase;
+  }
+
+  .title {
+    font-family: var(--font-heading);
+    font-size: clamp(52px, 8vw, 88px);
+    line-height: 0.9;
+    color: #f0f0f0;
+    text-transform: uppercase;
+  }
+  .title-highlight {
+    color: var(--color-accent);
+  }
+
+  .card-shell {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    padding: 3px;
+    transition: border-color 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .card-shell:hover {
+    border-color: rgba(230, 192, 0, 0.2);
+  }
+
+  .card-core {
+    background-color: #161616;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    transition: background-color 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+    display: flex;
+    flex-direction: column;
+  }
+  .card-shell:hover .card-core {
+    background-color: #1c1c1c;
+  }
+
+  .secondary-img-container {
+    aspect-ratio: 3 / 4;
+    width: 100%;
+    background-color: #111;
+  }
+
+  .member-img {
+    filter: grayscale(30%) contrast(1.05);
+    transition: filter 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .card-shell:hover .member-img {
+    filter: grayscale(0%) contrast(1.1);
+  }
+
+  .member-desc-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 16px 12px 16px;
+    background: linear-gradient(to top, #161616 85%, transparent 100%);
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s cubic-bezier(0.32, 0.72, 0, 1), transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+    pointer-events: none;
+    z-index: 20;
+  }
+  .card-shell:hover .member-desc-overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .desc-text {
+    font-family: var(--font-body);
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  .card-info {
+    padding: 12px;
+    background-color: #161616;
+    transition: background-color 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+    overflow: hidden;
+  }
+  .card-shell:hover .card-info {
+    background-color: #1c1c1c;
+  }
+
+  .card-number {
+    position: absolute;
+    bottom: -12px;
+    right: -4px;
+    font-family: var(--font-heading);
+    font-size: 72px;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.03);
+    pointer-events: none;
+  }
+
+  .card-position {
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  .card-name {
+    font-family: var(--font-heading);
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 768px) {
+    .grid .member-desc-overlay {
+      padding: 16px 10px 8px 10px;
+    }
+    .grid .desc-text {
+      font-size: 9.5px;
+      line-height: 1.35;
+    }
+    .card-info {
+      padding: 10px;
+    }
+    .card-name {
+      font-size: 16px;
+    }
+    .card-position {
+      font-size: 11px;
+    }
+    .card-number {
+      font-size: 56px;
+      bottom: -8px;
+      right: -2px;
+    }
+  }
+</style>
+

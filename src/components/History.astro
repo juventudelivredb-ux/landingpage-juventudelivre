@@ -1,0 +1,546 @@
+---
+/* History — Minimalistic Timeline with Single Vertical Line and Scroll Ball */
+
+const milestones = [
+  {
+    year: "2019",
+    title: "A Semente",
+    description:
+      "A ideia nasce dentro do Students For Liberty Brasil (SFL) como um projeto para disputar espaços no movimento estudantil tradicionalmente dominado pela esquerda.",
+    image: "/img/history/4f163615-a1a9-4f75-8ece-3b722ffde128.JPG",
+  },
+  {
+    year: "2020",
+    title: "Fundação & Missão",
+    description:
+      "Em 4 de julho de 2020, o movimento surge com a missão de combater as injustiças no movimento estudantil tradicional e acabar com o monopólio histórico do PCdoB na União Nacional dos Estudantes (UNE).",
+    image: "/img/history/5e00117d-9fde-4411-bd2d-25cf148a775f.JPG",
+  },
+  {
+    year: "2021",
+    title: "Frente pela Liberdade",
+    description:
+      'As chapas da "Frente pela Liberdade" marcam presença corajosa no 58º Congresso da UNE, desafiando o status quo e levando as ideias de liberdade ao maior congresso estudantil do país.',
+    image: "/img/history/7df6521a-ba72-470b-aff8-292fd209f4aa.JPG",
+  },
+  {
+    year: "2022+",
+    title: "Juventude Livre",
+    description:
+      "O movimento evolui para Juventude Livre (JL), consolidando-se como a principal força liberal estudantil do Brasil, com mais de 6 mil membros em todo o território nacional.",
+    image: "/img/history/IMG_9972.jpeg",
+  },
+];
+---
+
+<section
+  id="historia"
+  class="py-28 md:py-40 overflow-hidden"
+  aria-labelledby="history-heading"
+>
+  <div class="section-container">
+    <!-- Header -->
+    <div class="text-center mb-20 md:mb-28">
+      <div class="reveal" data-reveal>
+        <span
+          class="inline-block px-3 py-1 border border-accent/20 rounded-full text-[10px] font-semibold tracking-[0.2em] uppercase text-accent bg-accent/5 mb-6"
+        >
+          Nossa Trajetória
+        </span>
+      </div>
+      <h2
+        id="history-heading"
+        class="reveal reveal-d1 font-heading text-5xl sm:text-6xl lg:text-7xl text-white leading-[0.95] mb-4"
+        data-reveal
+      >
+        COMO <span class="text-accent">COMEÇAMOS</span>
+      </h2>
+      <div
+        class="reveal reveal-d2 accent-line mx-auto"
+        data-reveal
+        aria-hidden="true"
+      >
+      </div>
+    </div>
+
+    <!-- Timeline Container -->
+    <div class="relative timeline-container w-full">
+      <!-- Responsive Dynamic SVG Path (Atrás dos cards, z-index: 0) -->
+      <svg
+        class="absolute inset-0 w-full h-full pointer-events-none"
+        style="z-index: 0; overflow: visible;"
+        aria-hidden="true"
+      >
+        <!-- Linha inativa cinza de fundo (Reta Central Pura) -->
+        <path
+          id="timeline-flow-path"
+          d=""
+          fill="none"
+          stroke="rgba(255, 255, 255, 0.08)"
+          stroke-width="3"></path>
+        <!-- Linha ativa dourada de progresso (Reta Central Pura) -->
+        <path
+          id="timeline-active-path"
+          d=""
+          fill="none"
+          stroke="url(#timeline-grad)"
+          stroke-width="3"></path>
+        <defs>
+          <linearGradient id="timeline-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="var(--color-accent)"></stop>
+            <stop offset="100%" stop-color="var(--color-accent-dim)"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <!-- Scroll Indicator Image: Logo Lamparina Amarela oficial com fundo transparente nativo -->
+      <img
+        class="timeline-ball pointer-events-none"
+        src="/Logo_Lamparina_Amarela.png"
+        alt="Lamparina Juventude Livre"
+        aria-hidden="true"
+      />
+
+      <!-- Timeline Cards Flex Grid -->
+      <div class="flex flex-col gap-32 md:gap-40 relative z-10 w-full">
+        {
+          milestones.map((item, index) => (
+            <div
+              class={`reveal relative flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+              data-reveal
+            >
+              {/* Double-bezel Text Card */}
+              <div
+                class={`ml-12 md:ml-0 md:w-[calc(50%-2.5rem)] ${index % 2 === 0 ? "md:text-right md:pr-8" : "md:text-left md:pl-8"}`}
+              >
+                <div
+                  class="card-shell text-card-shell"
+                  data-side={index % 2 === 0 ? "left" : "right"}
+                  data-index={index}
+                >
+                  <div class="card-core p-6 md:p-8">
+                    {/* Year */}
+                    <span class="font-heading text-4xl md:text-5xl text-accent leading-none">
+                      {item.year}
+                    </span>
+                    <h3 class="font-heading text-xl md:text-2xl text-white mt-3 mb-3 tracking-wide">
+                      {item.title}
+                    </h3>
+                    <p class="text-text-muted text-sm md:text-[0.9375rem] leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Double-bezel Photo Card (Opposite Side) */}
+              <div
+                class={`ml-12 md:ml-0 md:w-[calc(50%-2.5rem)] mt-6 md:mt-0 ${index % 2 === 0 ? "md:text-left md:pl-8" : "md:text-right md:pr-8"}`}
+              >
+                <div
+                  class="card-shell history-photo-shell"
+                  data-side={index % 2 === 0 ? "right" : "left"}
+                  data-index={index}
+                >
+                  <div class="card-core overflow-hidden p-1.5 h-full">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      class="w-full h-[220px] md:h-[280px] object-cover rounded-[calc(1.5rem-0.5rem)] select-none pointer-events-none history-photo"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Timeline Dots (Nós estáticos centralizados na linha vertical) -->
+      {
+        milestones.map((_, index) => (
+          <div
+            class="absolute z-20 milestone-dot-wrapper pointer-events-none"
+            style="left: -999px; top: -999px;"
+          >
+            <div class="w-4 h-4 rounded-full bg-accent border-[3px] border-[var(--color-bg)] shadow-[0_0_16px_rgba(230,192,0,0.3)] milestone-dot" />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  #historia {
+    position: relative;
+    background-color: var(--color-bg);
+  }
+
+  /* Cinematic background image overlay */
+  #historia::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/imgpessoas/montagem.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.04; /* Subtle, cinematic background presence */
+    filter: grayscale(40%) contrast(110%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Fade out edges to blend seamlessly with surrounding sections */
+  #historia::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      var(--color-bg) 0%,
+      transparent 15%,
+      transparent 85%,
+      var(--color-bg) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  #historia > .section-container {
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Container da Timeline */
+  .timeline-container {
+    position: relative;
+    padding: 20px 0;
+  }
+
+  /* Transição suave nas bordas, sombra, opacidade e grayscale ao acender (Acelerada via Hardware) */
+  .card-shell {
+    position: relative;
+    border-color: rgba(
+      255,
+      255,
+      255,
+      0.08
+    ) !important; /* Borda cinza inativa apagada */
+    opacity: 0.25; /* Quase apagado (sem vida) antes da lamparina chegar */
+    filter: grayscale(100%); /* Totalmente em preto e branco */
+
+    transition:
+      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+      filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, box-shadow, opacity, filter; /* Camada GPU */
+  }
+
+  /* Feedback sutil ao passar o mouse em um card ainda inativo */
+  .card-shell:hover {
+    opacity: 0.45;
+    filter: grayscale(70%);
+    border-color: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  /* Ponto conector tipo rebate físico (sólido preto com borda inativa cinza) - Apenas nos Cards de Texto */
+  .text-card-shell::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #000000; /* Preto absoluto */
+    border: 1.5px solid rgba(255, 255, 255, 0.15); /* Borda cinza inativa */
+    border-radius: 50%;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    transition:
+      background-color 0.6s ease,
+      border-color 0.6s ease,
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.6s ease;
+  }
+
+  /* CARD ATIVADO PELA LAMPARINA (Ganhas cores, brilho, vida e elevação!) */
+  .card-shell.card-glow {
+    opacity: 1 !important; /* Totalmente visível e vibrante */
+    filter: grayscale(0%) !important; /* Retoma 100% das cores originais */
+    border-color: rgba(
+      230,
+      192,
+      0,
+      0.75
+    ) !important; /* Borda amarela iluminada */
+    transform: translateY(-4px);
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.4),
+      0 0 20px rgba(230, 192, 0, 0.25),
+      inset 0 0 12px rgba(230, 192, 0, 0.05);
+  }
+
+  /* Ativação do ponto superior (LED status) acendendo em amarelo vivo - Apenas nos Cards de Texto */
+  .text-card-shell.card-glow::after {
+    background-color: var(--color-accent) !important;
+    border-color: rgba(230, 192, 0, 0.8) !important;
+    transform: translateX(-50%) scale(1.2);
+    box-shadow: 0 0 8px var(--color-accent);
+  }
+
+  /* Scroll Indicator Ball (Logo Oficial da Lamparina Amarela - Fundo transparente nativo) */
+  .timeline-ball {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+    will-change: transform;
+    z-index: 30;
+    pointer-events: none;
+
+    /* drop-shadow focado no contorno da lamparina amarela, super limpo e elegante! */
+    filter: drop-shadow(0 0 6px rgba(230, 192, 0, 0.4))
+      drop-shadow(0 0 12px rgba(230, 192, 0, 0.2));
+
+    transition:
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      filter 0.6s ease;
+  }
+
+  /* Impacto de Cintilação Sutil na Lamparina (Elegância contida, sem escalas absurdas) */
+  .timeline-ball.ball-sparkle {
+    filter: drop-shadow(0 0 8px #ffffff)
+      drop-shadow(0 0 18px var(--color-accent)) !important;
+    transition:
+      transform 0.15s cubic-bezier(0.25, 1, 0.5, 1),
+      filter 0.15s ease;
+  }
+
+  /* Nós estáticos da timeline */
+  .milestone-dot {
+    will-change: transform, box-shadow, background-color; /* Camada GPU */
+    /* Transição suave LENTA para a saída */
+    transition:
+      background-color 0.6s ease,
+      border-color 0.6s ease,
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.6s ease;
+  }
+
+  /* Brilho ativo no nó ao cruzamento (Escala e sombra sutilíssimas para um visual elegante) */
+  .milestone-dot.dot-glow {
+    background-color: #ffffff !important;
+    border-color: var(--color-accent) !important;
+    transform: scale(1.35) !important;
+    box-shadow:
+      0 0 12px var(--color-accent),
+      0 0 24px var(--color-accent) !important;
+    /* Transição suave e imediata de entrada */
+    transition:
+      background-color 0.12s ease,
+      border-color 0.12s ease,
+      transform 0.15s cubic-bezier(0.25, 1, 0.5, 1),
+      box-shadow 0.12s ease;
+  }
+</style>
+
+<script>
+  const setupTimelineSVG = () => {
+    const container = document.querySelector(
+      ".timeline-container",
+    ) as HTMLElement;
+    const flowPath = document.getElementById(
+      "timeline-flow-path",
+    ) as SVGPathElement | null;
+    const activePath = document.getElementById(
+      "timeline-active-path",
+    ) as SVGPathElement | null;
+    const ball = document.querySelector(".timeline-ball") as HTMLElement | null;
+
+    if (!container || !flowPath || !activePath || !ball) return;
+
+    const dots = container.querySelectorAll(
+      ".milestone-dot-wrapper",
+    ) as NodeListOf<HTMLElement>;
+    const cards = container.querySelectorAll(
+      ".text-card-shell",
+    ) as NodeListOf<HTMLElement>;
+
+    if (cards.length === 0 || dots.length === 0) return;
+
+    // Array na memória que impede erros de string parsing (parseFloat) ou NaN
+    let dotYPositions: number[] = [];
+
+    const drawPath = () => {
+      const containerRect = container.getBoundingClientRect();
+      const isMobile = window.innerWidth < 768;
+
+      // A linha vertical central fica em x = 50% (ou 20px no mobile)
+      const centerX = isMobile ? 20 : containerRect.width / 2;
+
+      // Cria uma linha vertical reta perfeita de ponta a ponta
+      let d = `M ${centerX} 0 L ${centerX} ${containerRect.height}`;
+
+      const cardPositions = Array.from(cards).map((card, index) => {
+        const cardRect = card.getBoundingClientRect();
+        const relativeTop = cardRect.top - containerRect.top;
+        const cardHeight = cardRect.height;
+        const cardMidY = relativeTop + cardHeight / 2;
+
+        return { cardMidY };
+      });
+
+      // Salva as posições calculadas no array de memória seguro
+      dotYPositions = cardPositions.map((pos) => pos.cardMidY);
+
+      // Update the path dimensions safely
+      flowPath.setAttribute("d", d);
+      activePath.setAttribute("d", d);
+
+      // Alinha os Dot Wrappers estáticos exatamente na linha central vertical (centerX, cardMidY)
+      dots.forEach((dotWrapper, index) => {
+        const pos = cardPositions[index];
+        if (pos) {
+          dotWrapper.style.left = `${centerX}px`;
+          dotWrapper.style.top = `${pos.cardMidY}px`;
+          dotWrapper.style.transform = "translate(-50%, -50%)";
+        }
+      });
+    };
+
+    const updateTimelineProgress = () => {
+      const rect = container.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const focusY = viewportHeight * 0.55;
+
+      const scrolled = focusY - rect.top;
+      let progress = scrolled / rect.height;
+      progress = Math.min(Math.max(progress, 0), 1);
+
+      const pathLength = activePath.getTotalLength();
+      activePath.style.strokeDasharray = `${progress * pathLength} ${pathLength}`;
+
+      // A bolinha indicadora corre suavemente no centro seguindo o progresso Y da linha reta
+      const isMobile = window.innerWidth < 768;
+      const ballX = isMobile ? 20 : rect.width / 2;
+      const currentY = progress * rect.height;
+
+      // Aumentamos a janela de colisão vertical (de 25px para 45px) para dar mais tempo ao brilho!
+      let isNearAnyDot = false;
+      dots.forEach((dotWrapper, index) => {
+        const dotY = dotYPositions[index];
+        if (dotY === undefined) return;
+
+        const distance = Math.abs(currentY - dotY);
+
+        // Ativa o card assim que a bolinha de scroll ultrapassa ou chega muito próxima do Y do marco
+        const isPastDot = currentY >= dotY - 20;
+
+        const dot = dotWrapper.querySelector(".milestone-dot");
+        const card = cards[index];
+        const photo = container.querySelector(
+          `.history-photo-shell[data-index="${index}"]`,
+        ) as HTMLElement | null;
+
+        // 1. Bolinha do marco acende e brilha por aproximação
+        if (dot) {
+          if (distance < 45) {
+            // Janela ampliada
+            dot.classList.add("dot-glow");
+            isNearAnyDot = true;
+          } else {
+            dot.classList.remove("dot-glow");
+          }
+        }
+
+        // 2. O Card correspondente acende e PERMANECE cintilando após ser ativado
+        if (card) {
+          if (isPastDot) {
+            card.classList.add("card-glow");
+          } else {
+            card.classList.remove("card-glow");
+          }
+        }
+
+        // 3. A foto correspondente acende e ganha cores em sincronia perfeita!
+        if (photo) {
+          if (isPastDot) {
+            photo.classList.add("card-glow");
+          } else {
+            photo.classList.remove("card-glow");
+          }
+        }
+      });
+
+      // 3. A bolinha móvel (agora chama de lamparina) brilha forte ao cruzar qualquer nó
+      if (isNearAnyDot) {
+        ball.classList.add("ball-sparkle");
+        ball.style.transform = `translate(-50%, -50%) translate(${ballX}px, ${currentY}px) scale(1.15)`;
+      } else {
+        ball.classList.remove("ball-sparkle");
+        ball.style.transform = `translate(-50%, -50%) translate(${ballX}px, ${currentY}px) scale(1.0)`;
+      }
+      ball.style.opacity = "1";
+    };
+
+    const renderAll = () => {
+      drawPath();
+      updateTimelineProgress();
+    };
+
+    if (typeof ResizeObserver !== "undefined") {
+      const resizeObserver = new ResizeObserver(() => {
+        window.requestAnimationFrame(renderAll);
+      });
+      resizeObserver.observe(container);
+      cards.forEach((card) => resizeObserver.observe(card));
+    }
+
+    // PREVENÇÃO DE DUPLICAÇÃO EM HMR E NAVEGAÇÃO ASTRO:
+    // Removemos os ouvintes globais anteriores antes de adicionar novos
+    if ((window as any).__timelineScrollHandler) {
+      window.removeEventListener(
+        "scroll",
+        (window as any).__timelineScrollHandler,
+      );
+    }
+    if ((window as any).__timelineResizeHandler) {
+      window.removeEventListener(
+        "resize",
+        (window as any).__timelineResizeHandler,
+      );
+    }
+    if ((window as any).__timelineTimeout) {
+      clearTimeout((window as any).__timelineTimeout);
+    }
+
+    // Registra as novas referências
+    (window as any).__timelineScrollHandler = () => {
+      window.requestAnimationFrame(updateTimelineProgress);
+    };
+    (window as any).__timelineResizeHandler = renderAll;
+
+    window.addEventListener("resize", (window as any).__timelineResizeHandler);
+    window.addEventListener("scroll", (window as any).__timelineScrollHandler, {
+      passive: true,
+    });
+
+    // Executa primeira renderização agendada de forma segura
+    (window as any).__timelineTimeout = setTimeout(renderAll, 100);
+  };
+
+  // Garante que roda no HMR e nas transições de página do Astro de forma segura
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupTimelineSVG);
+  } else {
+    setupTimelineSVG();
+  }
+  document.addEventListener("astro:page-load", setupTimelineSVG);
+</script>

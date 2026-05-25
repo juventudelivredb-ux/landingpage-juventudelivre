@@ -1,0 +1,199 @@
+---
+/* Navbar — Floating pill, detached from edges, glass morphism */
+---
+
+<header class="nav-float">
+  <nav
+    class="section-container flex items-center justify-between h-14"
+    aria-label="Navegação principal"
+  >
+    <!-- Logo -->
+    <a
+      href="#"
+      class="flex items-center group"
+      aria-label="Juventude Livre — Início"
+    >
+      <img
+        src="/logo-jl.png"
+        alt="Juventude Livre"
+        class="h-9 w-auto transition-all duration-500 group-hover:scale-105"
+        style="transition-timing-function: var(--ease-spring);"
+        width="108"
+        height="36"
+      />
+    </a>
+
+    <!-- Desktop links -->
+    <ul class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+      <li>
+        <a href="#sobre" class="nav-link">Sobre Nós</a>
+      </li>
+      <li>
+        <a href="#valores" class="nav-link">Pilares</a>
+      </li>
+      <li>
+        <a href="#mesa-diretora" class="nav-link">Mesa Diretora</a>
+      </li>
+      <li>
+        <a href="#historia" class="nav-link">Nossa História</a>
+      </li>
+      <li>
+        <a href="#transparencia" class="nav-link">Transparência</a>
+      </li>
+      <li>
+        <a href="#contribua" class="nav-link">Contribua</a>
+      </li>
+    </ul>
+
+    <!-- CTA desktop — button-in-button pattern -->
+    <a
+      href="https://linktr.ee/juventude.livre"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hidden md:inline-flex items-center gap-2 pl-5 pr-2 py-1.5 bg-accent text-bg font-semibold text-sm rounded-full hover:bg-accent-hover transition-all duration-500 active:scale-[0.97]"
+      style="transition-timing-function: var(--ease-spring);"
+    >
+      Junte-se
+      <span
+        class="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center transition-transform duration-500 group-hover:translate-x-0.5"
+        style="transition-timing-function: var(--ease-spring);"
+      >
+        <svg
+          class="w-3.5 h-3.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+        </svg>
+      </span>
+    </a>
+
+    <!-- Hamburger mobile -->
+    <button
+      id="menu-toggle"
+      class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 group"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span
+        class="block w-6 h-0.5 bg-white transition-all duration-500 origin-center group-aria-expanded:rotate-45 group-aria-expanded:translate-y-2"
+        style="transition-timing-function: var(--ease-spring);"></span>
+      <span
+        class="block w-6 h-0.5 bg-white transition-all duration-500 group-aria-expanded:opacity-0"
+        style="transition-timing-function: var(--ease-spring);"></span>
+      <span
+        class="block w-6 h-0.5 bg-white transition-all duration-500 origin-center group-aria-expanded:-rotate-45 group-aria-expanded:-translate-y-2"
+        style="transition-timing-function: var(--ease-spring);"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu — fullscreen overlay -->
+  <div
+    id="mobile-menu"
+    class="md:hidden hidden flex-col items-center justify-center gap-8 pb-10 pt-6 bg-bg/95 backdrop-blur-2xl border-t border-white/5"
+    aria-hidden="true"
+  >
+    <a href="#sobre" class="text-2xl font-heading tracking-wide text-text-muted hover:text-accent transition-colors duration-300">Sobre Nós</a>
+    <a href="#valores" class="text-2xl font-heading tracking-wide text-text-muted hover:text-accent transition-colors duration-300">Pilares</a>
+    <a href="#mesa-diretora" class="text-2xl font-heading tracking-wide text-text-muted hover:text-accent transition-colors duration-300">Mesa Diretora</a>
+    <a href="#historia" class="text-2xl font-heading tracking-wide text-text-muted hover:text-accent transition-colors duration-300">Nossa História</a>
+    <a href="#transparencia" class="text-2xl font-heading tracking-wide text-text-muted hover:text-accent transition-colors duration-300">Transparência</a>
+    <a href="#contribua" class="text-2xl font-heading tracking-wide text-text-muted hover:text-accent transition-colors duration-300">Contribua</a>
+    <a
+      href="https://linktr.ee/juventude.livre"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 px-8 py-3 bg-accent text-bg font-semibold rounded-full hover:bg-accent-hover transition-colors"
+    >
+      Junte-se a nós
+    </a>
+  </div>
+</header>
+
+<!-- Spacer -->
+<div class="h-20 md:h-24" aria-hidden="true"></div>
+
+<style>
+  .nav-float {
+    position: fixed;
+    top: 0.75rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 50;
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 9999px;
+    box-shadow:
+      0 4px 30px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    transition: background 0.5s var(--ease-spring);
+  }
+
+  @media (min-width: 768px) {
+    .nav-float {
+      left: 2rem;
+      right: 2rem;
+      max-width: 1100px;
+      margin-inline: auto;
+    }
+  }
+
+  .nav-link {
+    color: var(--color-text-muted);
+    transition: color 0.3s var(--ease-spring);
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent);
+    border-radius: 1px;
+    transition: width 0.4s var(--ease-out-expo);
+  }
+
+  .nav-link:hover {
+    color: var(--color-accent);
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const isOpen = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+      menu.classList.toggle("hidden");
+      menu.classList.toggle("flex");
+      menu.setAttribute("aria-hidden", String(isOpen));
+    });
+
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        toggle.setAttribute("aria-expanded", "false");
+        menu.classList.add("hidden");
+        menu.classList.remove("flex");
+        menu.setAttribute("aria-hidden", "true");
+      });
+    });
+  }
+</script>

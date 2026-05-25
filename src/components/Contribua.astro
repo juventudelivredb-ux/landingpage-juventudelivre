@@ -1,0 +1,559 @@
+---
+/* Contribua - Donation section with full-bleed image, custom value input and JL mark */
+---
+
+<section id="contribua" class="doe-section" aria-labelledby="doe-heading">
+  <div class="doe-hero" aria-hidden="true">
+    <img
+      src="/bandeirajl.JPG"
+      alt=""
+      class="doe-hero-img"
+      loading="lazy"
+      width="1600"
+      height="1200"
+    />
+    <div class="doe-hero-fade"></div>
+    <div class="doe-hero-vignette"></div>
+  </div>
+
+  <div class="doe-content section-container">
+    <div class="doe-grid">
+      <div class="doe-left">
+        <div class="doe-top reveal" data-reveal>
+          <span class="doe-eyebrow">Apoie o Movimento</span>
+
+          <h2 id="doe-heading" class="font-heading doe-heading">
+            FAÇA PARTE<br />
+            <span class="text-accent">DA MUDANÇA</span>
+          </h2>
+
+          <div class="accent-line doe-line" aria-hidden="true"></div>
+
+          <p class="doe-lead">
+            A Juventude Livre é um movimento <strong
+              class="text-white font-medium"
+              >100% voluntário e independente</strong
+            >. Cada doação financia materiais, eventos e a expansão da liberdade
+            por todo o Brasil.
+          </p>
+        </div>
+
+        <div class="doe-value-card reveal reveal-d1" data-reveal>
+          <label class="doe-card-badge" for="doe-value"
+            >Valor da contribuição</label
+          >
+          <div class="doe-input-row">
+            <span class="doe-currency" aria-hidden="true">R$</span>
+            <input
+              id="doe-value"
+              class="doe-value-input"
+              type="number"
+              inputmode="decimal"
+              min="1"
+              step="1"
+              placeholder="Digite o valor"
+              aria-label="Digite o valor da contribuição em reais"
+            />
+          </div>
+          <p class="doe-card-desc">
+            Você escolhe quanto quer contribuir para fortalecer a Juventude
+            Livre.
+          </p>
+        </div>
+
+        <div class="doe-cta-row reveal reveal-d2" data-reveal>
+          <a
+            id="doe-btn"
+            href="https://linktr.ee/juventude.livre"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="doe-btn group"
+            aria-label="Ir para a página de doação"
+          >
+            <span>Quero Contribuir</span>
+            <span
+              class="doe-btn-icon group-hover:translate-x-0.5 group-hover:-translate-y-px group-hover:scale-105"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
+              </svg>
+            </span>
+          </a>
+
+          <p class="doe-disclaimer">
+            Pagamento seguro via Pix, cartão ou boleto.
+            <br class="hidden sm:block" />
+            Movimento apartidário e sem fins lucrativos.
+          </p>
+        </div>
+      </div>
+
+      <div class="doe-mark reveal reveal-d1" data-reveal aria-hidden="true">
+        <img
+          src="/Logo_Lamparina_Amarela.png"
+          alt=""
+          class="doe-mark-img"
+          loading="lazy"
+          width="420"
+          height="420"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="doe-glow" aria-hidden="true"></div>
+</section>
+
+<style>
+  .doe-section {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-bg);
+    min-height: clamp(760px, 92vh, 980px);
+    display: flex;
+    align-items: center;
+    padding-block: clamp(5rem, 10vh, 8rem);
+  }
+
+  .doe-hero {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .doe-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 42%;
+    display: block;
+    animation: doeImgReveal 1.4s var(--ease-out-expo) both;
+  }
+
+  @keyframes doeImgReveal {
+    from {
+      transform: scale(1.06);
+      opacity: 0.6;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .doe-hero-fade {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(10, 10, 10, 0.88) 0%,
+        rgba(10, 10, 10, 0.66) 38%,
+        rgba(10, 10, 10, 0.18) 100%
+      ),
+      linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(10, 10, 10, 0.18) 38%,
+        var(--color-bg) 100%
+      );
+  }
+
+  .doe-hero-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 45%,
+      rgba(10, 10, 10, 0.56) 100%
+    );
+  }
+
+  .doe-content {
+    position: relative;
+    z-index: 10;
+    margin-top: 0;
+    padding-block: 0;
+  }
+
+  .doe-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 560px) minmax(280px, 1fr);
+    gap: clamp(1.5rem, 5vw, 5rem);
+    align-items: center;
+    min-height: 0;
+  }
+
+  .doe-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 2rem;
+  }
+
+  .doe-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .doe-eyebrow {
+    display: inline-block;
+    padding: 0.375rem 1rem;
+    border: 1px solid rgba(230, 192, 0, 0.25);
+    border-radius: 9999px;
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(230, 192, 0, 0.06);
+  }
+
+  .doe-heading {
+    font-size: clamp(3.25rem, 7.4vw, 7.25rem);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 100px rgba(230, 192, 0, 0.08);
+  }
+
+  .doe-line {
+    margin-bottom: 1.75rem;
+  }
+
+  .doe-lead {
+    max-width: 540px;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.62);
+  }
+
+  .doe-mark {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(360px, 54vw, 760px);
+    aspect-ratio: 1;
+    margin-right: clamp(-8rem, -8vw, -2rem);
+    border-radius: 9999px;
+    background: radial-gradient(
+      circle,
+      rgba(230, 192, 0, 0.12) 0%,
+      rgba(230, 192, 0, 0.035) 45%,
+      transparent 72%
+    );
+    filter: drop-shadow(0 0 64px rgba(230, 192, 0, 0.28));
+  }
+
+  .doe-mark-img {
+    width: clamp(280px, 43vw, 590px);
+    height: auto;
+    display: block;
+  }
+
+  .doe-value-card {
+    position: relative;
+    display: flex;
+    min-height: 172px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    gap: 0.875rem;
+    width: 100%;
+    max-width: 520px;
+    padding: 1.5rem 1.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition:
+      border-color 0.4s var(--ease-out-expo),
+      background 0.4s var(--ease-out-expo),
+      box-shadow 0.4s var(--ease-out-expo);
+  }
+
+  .doe-value-card:focus-within {
+    border-color: rgba(230, 192, 0, 0.35);
+    background: rgba(230, 192, 0, 0.06);
+    box-shadow:
+      0 16px 48px rgba(0, 0, 0, 0.4),
+      0 0 40px rgba(230, 192, 0, 0.08);
+  }
+
+  .doe-card-badge {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    opacity: 0.8;
+  }
+
+  .doe-input-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .doe-currency {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-accent);
+    letter-spacing: 0.02em;
+  }
+
+  .doe-value-input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    background: transparent;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: clamp(1.45rem, 2.6vw, 2.35rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    outline: none;
+    padding: 0.2rem 0 0.35rem;
+  }
+
+  .doe-value-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .doe-value-input::-webkit-outer-spin-button,
+  .doe-value-input::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+  }
+
+  .doe-value-input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .doe-card-desc {
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.42);
+  }
+
+  .doe-cta-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .doe-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 0.9rem 0.9rem 2rem;
+    background: var(--color-accent);
+    color: var(--color-bg, #0a0a0a);
+    font-weight: 700;
+    font-size: 0.9375rem;
+    border-radius: 9999px;
+    transition:
+      background 0.5s var(--ease-spring),
+      box-shadow 0.5s var(--ease-spring),
+      transform 0.5s var(--ease-spring);
+    box-shadow:
+      0 0 50px rgba(230, 192, 0, 0.2),
+      0 8px 24px rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.01em;
+    max-width: 100%;
+  }
+
+  .doe-btn > span:first-child {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .doe-btn:hover {
+    background: var(--color-accent-hover, #f0d000);
+    box-shadow:
+      0 0 80px rgba(230, 192, 0, 0.35),
+      0 12px 32px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .doe-btn:active {
+    transform: scale(0.97);
+  }
+
+  .doe-btn-icon {
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 9999px;
+    background: rgba(0, 0, 0, 0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.5s var(--ease-spring);
+  }
+
+  .doe-disclaimer {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.34);
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  .doe-glow {
+    position: absolute;
+    left: 34%;
+    bottom: 9%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(230, 192, 0, 0.07) 0%,
+      transparent 65%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @media (max-width: 900px) {
+    .doe-section {
+      min-height: auto;
+      align-items: flex-start;
+      padding-block: 6rem 5rem;
+    }
+
+    .doe-hero-fade {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(10, 10, 10, 0.88) 0%,
+          rgba(10, 10, 10, 0.7) 54%,
+          rgba(10, 10, 10, 0.34) 100%
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(10, 10, 10, 0.16) 0%,
+          rgba(10, 10, 10, 0.52) 45%,
+          var(--color-bg) 100%
+        );
+    }
+
+    .doe-content {
+      margin-top: 0;
+    }
+
+    .doe-grid {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      position: relative;
+    }
+
+    .doe-mark {
+      position: absolute;
+      top: -2.5rem;
+      right: -4.5rem;
+      width: 270px;
+      margin: 0;
+      opacity: 0.55;
+      z-index: -1;
+    }
+
+    .doe-mark-img {
+      width: 205px;
+    }
+
+    .doe-left {
+      max-width: 640px;
+    }
+  }
+
+  @media (max-width: 639px) {
+    .doe-section {
+      padding-block: 5rem 4.5rem;
+    }
+
+    .doe-hero-img {
+      object-position: 58% 42%;
+    }
+
+    .doe-left {
+      gap: 1.5rem;
+    }
+
+    .doe-heading {
+      font-size: clamp(2.65rem, 13vw, 4.25rem);
+    }
+
+    .doe-value-card {
+      min-height: 156px;
+      padding: 1.25rem;
+    }
+
+    .doe-value-input {
+      font-size: clamp(1.25rem, 7vw, 1.85rem);
+    }
+
+    .doe-currency {
+      font-size: 1.45rem;
+    }
+
+    .doe-btn {
+      width: 100%;
+      justify-content: space-between;
+      padding-left: 1.25rem;
+    }
+
+    .doe-mark {
+      display: none;
+    }
+
+    .doe-mark-img {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const valueInput = document.getElementById(
+    "doe-value",
+  ) as HTMLInputElement | null;
+  const btn = document.getElementById("doe-btn") as HTMLAnchorElement | null;
+  const buttonText = btn?.querySelector("span:first-child");
+
+  valueInput?.addEventListener("input", () => {
+    if (!buttonText) return;
+
+    const value = valueInput.value.trim();
+    buttonText.textContent = value
+      ? `Quero Contribuir com R$\u00a0${value}`
+      : "Quero Contribuir";
+  });
+</script>

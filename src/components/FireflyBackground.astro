@@ -1,0 +1,125 @@
+---
+/* Subtle cursor glow layer */
+---
+
+<div class="firefly-layer" aria-hidden="true">
+  <div class="firefly-cursor"></div>
+</div>
+
+<style>
+  .firefly-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 12;
+    pointer-events: none;
+    overflow: hidden;
+    mix-blend-mode: screen;
+    opacity: 0.7;
+  }
+
+  .firefly-cursor {
+    position: absolute;
+    left: var(--firefly-x, 50vw);
+    top: var(--firefly-y, 50vh);
+    width: clamp(120px, 16vw, 220px);
+    height: clamp(120px, 16vw, 220px);
+    border-radius: 9999px;
+    background:
+      radial-gradient(circle,
+        rgba(255, 226, 88, 0.105) 0%,
+        rgba(230, 192, 0, 0.055) 28%,
+        rgba(230, 192, 0, 0.018) 54%,
+        transparent 72%
+      );
+    opacity: var(--firefly-cursor-opacity, 0);
+    transform: translate(-50%, -50%);
+    transition:
+      opacity 0.35s var(--ease-out-expo),
+      width 0.35s var(--ease-out-expo),
+      height 0.35s var(--ease-out-expo);
+    filter: blur(6px);
+  }
+
+  .firefly-cursor::before,
+  .firefly-cursor::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    background: rgba(255, 226, 88, 0.16);
+    box-shadow: 0 0 18px rgba(230, 192, 0, 0.18);
+    animation: fireflyPulse 2.8s ease-in-out infinite;
+  }
+
+  .firefly-cursor::before {
+    width: 4px;
+    height: 4px;
+    left: 43%;
+    top: 36%;
+  }
+
+  .firefly-cursor::after {
+    width: 3px;
+    height: 3px;
+    left: 58%;
+    top: 54%;
+    animation-delay: -1.3s;
+  }
+
+  @keyframes fireflyPulse {
+    0%, 100% {
+      opacity: 0.22;
+      transform: translate3d(0, 0, 0) scale(0.85);
+    }
+    50% {
+      opacity: 0.55;
+      transform: translate3d(8px, -6px, 0) scale(1.12);
+    }
+  }
+
+  @media (pointer: coarse), (prefers-reduced-motion: reduce) {
+    .firefly-layer {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const layer = document.querySelector<HTMLElement>(".firefly-layer");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (layer && !reduceMotion) {
+    let targetX = window.innerWidth / 2;
+    let targetY = window.innerHeight / 2;
+    let currentX = targetX;
+    let currentY = targetY;
+    let frame = 0;
+
+    const render = () => {
+      currentX += (targetX - currentX) * 0.12;
+      currentY += (targetY - currentY) * 0.12;
+      layer.style.setProperty("--firefly-x", `${currentX}px`);
+      layer.style.setProperty("--firefly-y", `${currentY}px`);
+      frame = window.requestAnimationFrame(render);
+    };
+
+    const updatePointer = (event: PointerEvent) => {
+      targetX = event.clientX;
+      targetY = event.clientY;
+      layer.style.setProperty("--firefly-cursor-opacity", "1");
+    };
+
+    const clearPointer = () => {
+      layer.style.setProperty("--firefly-cursor-opacity", "0");
+    };
+
+    window.addEventListener("pointermove", updatePointer, { passive: true });
+    window.addEventListener("pointerleave", clearPointer);
+    frame = window.requestAnimationFrame(render);
+
+    document.addEventListener("astro:before-swap", () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("pointermove", updatePointer);
+      window.removeEventListener("pointerleave", clearPointer);
+    }, { once: true });
+  }
+</script>

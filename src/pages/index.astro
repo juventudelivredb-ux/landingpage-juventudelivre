@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Pilares from "../components/Pilares.astro";
+import MesaDiretora from "../components/MesaDiretora.astro";
+import DiretoriaPlena from "../components/DiretoriaPlena.astro";
+import History from "../components/History.astro";
+import NossaPresenca from "../components/NossaPresenca.astro";
+import Transparency from "../components/Transparency.astro";
+import Contribua from "../components/Contribua.astro";
+---
+
+<Layout>
+  <Hero />
+  <!-- This wrapper rises over the sticky hero as you scroll -->
+  <div class="relative z-10 bg-bg rounded-t-3xl shadow-[0_-20px_60px_rgba(0,0,0,0.6)]">
+    <About />
+    <Pilares />
+    <MesaDiretora />
+    <DiretoriaPlena />
+    <History />
+    <NossaPresenca />
+    <Transparency />
+    <Contribua />
+  </div>
+</Layout>

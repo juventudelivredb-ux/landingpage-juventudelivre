@@ -1,0 +1,346 @@
+---
+const members = [
+  { 
+    pos: "02", 
+    role: "Vice-Presidente", 
+    name: "Rafael Nunes", 
+    img: "/imgpessoas/mesaDiretora/Rafael_Nunes_Vice_Presidente.jpeg",
+    desc: "Responsável pela articulação política e expansão de novos núcleos no país."
+  },
+  { 
+    pos: "03", 
+    role: "Secretária-Geral", 
+    name: "Beatriz Vaz", 
+    img: "/imgpessoas/mesaDiretora/Beatriz_Vaz_Secretaria_Geral.jpeg",
+    desc: "Coordena a administração, conformidade e fluxo de comunicação interna."
+  },
+  { 
+    pos: "04", 
+    role: "Tesoureiro", 
+    name: "Ramon Schuindt", 
+    img: "/imgpessoas/mesaDiretora/Ramon_Tesoureiro.jpeg",
+    desc: "Garante a saúde financeira e transparência na alocação de recursos."
+  },
+  { 
+    pos: "05", 
+    role: "1ª Secretária", 
+    name: "Sara Eduarda Almeida", 
+    img: "/imgpessoas/mesaDiretora/Sara_Eduarda_Almeida_1_Secretaria.jpeg",
+    desc: "Ponte de comunicação entre os núcleos regionais e a executiva nacional."
+  },
+];
+---
+
+<section id="mesa-diretora" class="mesa-section relative z-10 w-full overflow-hidden">
+  <div class="section-container mesa-content relative mx-auto z-10">
+    <!-- Cabeçalho -->
+    <div class="flex flex-col items-center text-center mb-16 md:mb-24 reveal" data-reveal>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="eyebrow">GESTÃO 2025–2026</span>
+        <div class="accent-line"></div>
+      </div>
+      <h2 class="title">
+        MESA <span class="title-highlight">/</span> <span class="title-highlight">DIRETORA</span>
+      </h2>
+    </div>
+
+    <!-- Linha 1: Presidente + Texto de Gestão -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 max-w-[1000px] mx-auto mb-16 md:mb-20 reveal reveal-d1" data-reveal>
+      <!-- Card do Presidente -->
+      <div class="flex-shrink-0">
+        <div class="president-card-wrapper card-shell">
+          <div class="card-core overflow-hidden group">
+            <div class="img-container relative">
+              <img 
+                src="/imgpessoas/mesaDiretora/Bruno_Sperancetta_Presidente.jpeg" 
+                alt="Bruno Sperancetta" 
+                class="member-img absolute inset-0 w-full h-full object-cover object-top" 
+                loading="lazy" 
+              />
+              <div class="absolute top-4 left-4 z-20">
+                <span class="president-badge">★ PRESIDENTE</span>
+              </div>
+              <!-- Hover Description Overlay -->
+              <div class="member-desc-overlay">
+                <p class="desc-text">
+                  Líder da gestão 2025-2026, coordena a estratégia nacional e o avanço de pautas de liberdade estudantil e excelência nos conselhos de educação.
+                </p>
+              </div>
+            </div>
+            <div class="card-info relative z-10">
+               <span class="card-number">01</span>
+               <div class="card-position">Presidente</div>
+               <div class="card-name">Bruno Sperancetta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Texto da Gestão -->
+      <div class="flex-grow text-left max-w-xl md:pl-4">
+        <span class="eyebrow block text-accent mb-2">Compromisso & Liderança</span>
+        <h3 class="font-heading text-3xl md:text-4xl text-white mb-6 leading-tight">
+          A FORÇA DA MESA DIRETORA NA GESTÃO 2025–2026
+        </h3>
+        <p class="text-text-muted text-sm md:text-base leading-relaxed mb-6">
+          A Mesa Diretora da Juventude Livre assume o compromisso de liderar a renovação estudantil com coragem e independência. Sob a presidência de Bruno Sperancetta, nossa missão é descentralizar o debate, formar novas lideranças e assegurar uma representação pautada pela liberdade individual, transparência e seriedade intelectual.
+        </p>
+        <p class="text-text-muted text-sm md:text-base leading-relaxed">
+          Nesta nova gestão, atuamos incansavelmente para democratizar as decisões, defender a excelência educacional e construir caminhos livres de amarras tradicionais, pavimentando um futuro de autonomia e conquistas reais para os estudantes de todo o país.
+        </p>
+      </div>
+    </div>
+
+    <!-- Linha 2: Outros membros -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-[1000px] mx-auto">
+      {members.map((member, index) => (
+        <div class={`reveal reveal-d${index + 2}`} data-reveal>
+          <div class="card-shell h-full">
+            <div class="card-core overflow-hidden group h-full">
+               <div class="secondary-img-container relative">
+                  <img 
+                    src={member.img} 
+                    alt={member.name} 
+                    class="member-img absolute inset-0 w-full h-full object-cover object-top" 
+                    loading="lazy" 
+                  />
+                  <!-- Hover Description Overlay -->
+                  <div class="member-desc-overlay">
+                    <p class="desc-text">{member.desc}</p>
+                  </div>
+               </div>
+               <div class="card-info flex-grow relative z-10">
+                  <span class="card-number">{member.pos}</span>
+                  <div class="card-position">{member.role}</div>
+                  <div class="card-name">{member.name}</div>
+               </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .mesa-section {
+    background-color: var(--color-bg);
+    padding: 48px 20px 112px 20px;
+  }
+  @media (max-width: 700px) {
+    .mesa-section {
+      padding: 48px 20px;
+    }
+  }
+
+  .mesa-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+    z-index: 0;
+  }
+
+  .eyebrow {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: var(--color-accent);
+  }
+
+  .title {
+    font-family: var(--font-heading);
+    font-size: clamp(52px, 8vw, 88px);
+    line-height: 0.9;
+    color: #f0f0f0;
+  }
+  .title-highlight {
+    color: var(--color-accent);
+  }
+
+  /* Redefinições específicas para a Mesa Diretora sobre as globais */
+  .card-shell {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    padding: 3px;
+    transition: border-color 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .card-shell:hover {
+    border-color: rgba(230, 192, 0, 0.2);
+  }
+
+  .card-core {
+    background-color: #161616;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    transition: background-color 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+    display: flex;
+    flex-direction: column;
+  }
+  .card-shell:hover .card-core {
+    background-color: #1c1c1c;
+  }
+
+  /* Ajustes de Aspect Ratio e Dimensões */
+  .president-card-wrapper {
+    width: 280px;
+  }
+  .president-card-wrapper .card-core {
+    aspect-ratio: 2 / 3;
+  }
+  .img-container {
+    flex-grow: 1;
+    background-color: #111;
+  }
+  .secondary-img-container {
+    aspect-ratio: 3 / 4;
+    width: 100%;
+    background-color: #111;
+  }
+
+  /* Filtros da Foto */
+  .member-img {
+    filter: grayscale(30%) contrast(1.05);
+    transition: filter 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .card-shell:hover .member-img {
+    filter: grayscale(0%) contrast(1.1);
+  }
+
+  /* Overlay de descrição no hover */
+  .member-desc-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 16px 12px 16px;
+    background: linear-gradient(to top, #161616 85%, transparent 100%);
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s cubic-bezier(0.32, 0.72, 0, 1), transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+    pointer-events: none;
+    z-index: 20;
+  }
+  .card-shell:hover .member-desc-overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .desc-text {
+    font-family: var(--font-body);
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    /* Apenas os cards secundários (2 a 5) encolhem no mobile */
+    .grid .member-desc-overlay {
+      padding: 16px 10px 8px 10px;
+    }
+    .grid .desc-text {
+      font-size: 9.5px;
+      line-height: 1.35;
+    }
+  }
+
+  /* Info e Textos */
+  .card-info {
+    padding: 18px 20px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .card-position {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--color-accent);
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10;
+  }
+
+  .card-name {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    color: #f0f0f0;
+    text-transform: uppercase;
+    line-height: 1.1;
+    position: relative;
+    z-index: 10;
+  }
+
+  .card-number {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    font-family: var(--font-heading);
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.04);
+    line-height: 0.8;
+    user-select: none;
+    z-index: 0;
+  }
+
+  .president-badge {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: #0a0a0a;
+    font-family: var(--font-heading);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    padding: 4px 10px;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const section = document.getElementById("mesa-diretora");
+    if (!section) return;
+
+    const content = section.querySelector(".mesa-content") as HTMLElement;
+
+    const handleParallax = () => {
+      if (window.innerWidth < 768) {
+        // Remove transformações em mobile para evitar bugs de scroll
+        if (content) content.style.transform = "";
+        return;
+      }
+
+      const rect = section.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      // Verifica se a seção está visível na tela
+      if (rect.top < viewportHeight && rect.bottom > 0) {
+        // Calcula a rolagem em relação à seção
+        const scrollProgress = viewportHeight - rect.top;
+        const offset = scrollProgress * -0.04; // Subida sutil e unificada de toda a seção
+        
+        if (content) {
+          content.style.transform = `translateY(${offset}px)`;
+        }
+      }
+    };
+
+    // Otimização de performance usando passive listener
+    window.addEventListener("scroll", () => {
+      window.requestAnimationFrame(handleParallax);
+    }, { passive: true });
+
+    // Executa uma vez no início
+    handleParallax();
+  });
+</script>

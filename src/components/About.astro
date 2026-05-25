@@ -1,0 +1,467 @@
+﻿---
+/* About Section â€” Editorial split: text left, stacked photos right */
+
+const people = [
+  { name: "Gabriele Benini", src: "/gabriele-benini.png" },
+  { name: "João Pedro Porto", src: "/joao-pedro-porto.png" },
+  { name: "Ramon Schuindt", src: "/ramon-schuindt.png" },
+];
+---
+
+<section
+  id="sobre"
+  class="pt-28 pb-0 md:pt-36 md:pb-16 overflow-hidden"
+  aria-labelledby="about-heading"
+>
+  <div class="section-container">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
+      <!-- Text column â€” spans 7/12 for asymmetry -->
+      <div class="about-copy lg:col-span-7">
+        <!-- Eyebrow -->
+        <div class="reveal" data-reveal>
+          <span
+            class="inline-block px-3 py-1 border border-accent/20 rounded-full text-[10px] font-semibold tracking-[0.2em] uppercase text-accent bg-accent/5 mb-6"
+          >
+            O Movimento
+          </span>
+        </div>
+
+        <h2
+          id="about-heading"
+          class="reveal reveal-d1 font-heading text-5xl sm:text-6xl lg:text-7xl text-white leading-[0.95] mb-8"
+          data-reveal
+        >
+          A ÚNICA FORÇA<br />
+          <span class="text-accent">FORA DA BOLHA</span>
+        </h2>
+
+        <div
+          class="reveal reveal-d2 accent-line mb-8"
+          data-reveal
+          aria-hidden="true"
+        >
+        </div>
+
+        <p
+          class="reveal reveal-d2 text-text-muted text-base md:text-[1.0625rem] leading-[1.75] mb-6 max-w-xl"
+          data-reveal
+        >
+          Atuando desde <strong class="text-white font-medium"
+            >4 de julho de 2020</strong
+          >, somos a resistência ativa ao movimento estudantil tradicional. Disputamos com coragem espaços de poder nas maiores entidades do país, como a <strong
+            class="text-white font-medium"
+            >União Nacional dos Estudantes (UNE)</strong
+          > e a
+          <strong class="text-white font-medium"
+            >União Brasileira dos Estudantes Secundaristas (UBES)</strong
+          >, desafiando o monopólio histórico e levando as ideias de liberdade.
+        </p>
+
+        <p
+          class="reveal reveal-d2 text-text-muted text-base md:text-[1.0625rem] leading-[1.75] mb-8 max-w-xl"
+          data-reveal
+        >
+          Hoje, nossos membros atuam voluntariamente e de forma independente em diversos setores da sociedade: lideramos <strong class="text-white font-medium">Diretórios Centrais de Estudantes (DCEs), Centros Acadêmicos (CAs), Grêmios Estudantis</strong> e Conselhos de Juventude, impulsionando ações sociais de impacto real e promovendo o desenvolvimento acadêmico e intelectual dos jovens líderes.
+        </p>
+
+        <div class="about-stats reveal reveal-d3" data-reveal>
+          <div class="about-stat">
+            <p class="font-heading text-3xl md:text-4xl text-accent">
+              <span data-count="6000" data-suffix="+">0</span>
+            </p>
+            <p class="text-xs text-text-subtle uppercase tracking-widest mt-1">
+              Membros
+            </p>
+          </div>
+          <div class="about-stat">
+            <p class="font-heading text-3xl md:text-4xl text-accent">
+              <span data-count="26">0</span>
+            </p>
+            <p class="text-xs text-text-subtle uppercase tracking-widest mt-1">
+              Estados
+            </p>
+          </div>
+          <div class="about-stat">
+            <p class="font-heading text-3xl md:text-4xl text-accent">
+              2020
+            </p>
+            <p class="text-xs text-text-subtle uppercase tracking-widest mt-1">
+              Fundação
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photos column â€” spans 5/12, cutout collage composition -->
+      <div
+        class="about-visual lg:col-span-5 flex flex-col items-center lg:items-end"
+        aria-label="Membros da Juventude Livre"
+      >
+        <div class="stack-wrapper reveal" data-reveal>
+          <!-- Back-left (Guy with mic) -->
+          <div class="stack-img stack-back-left">
+            <div class="member-aura-glow"></div>
+            <img
+              src={people[2].src}
+              alt={people[2].name}
+              class="w-full h-auto block pointer-events-none select-none relative z-10"
+              loading="lazy"
+            />
+            <div class="about-desc-card">
+              <h4 class="about-desc-name">{people[2].name}</h4>
+              <p class="about-desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+
+          <!-- Back-right (Guy with flag) -->
+          <div class="stack-img stack-back-right">
+            <div class="member-aura-glow"></div>
+            <!-- Flipped image inside to keep text card unflipped -->
+            <img
+              src={people[1].src}
+              alt={people[1].name}
+              class="w-full h-auto block pointer-events-none select-none relative z-10"
+              loading="lazy"
+              style="transform: scaleX(-1);"
+            />
+            <div class="about-desc-card">
+              <h4 class="about-desc-name">{people[1].name}</h4>
+              <p class="about-desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+
+          <!-- Front (Girl with mic) -->
+          <div class="stack-img stack-front">
+            <div class="member-aura-glow"></div>
+            <img
+              src={people[0].src}
+              alt={people[0].name}
+              class="w-full h-auto block pointer-events-none select-none relative z-10"
+              loading="lazy"
+            />
+            <div class="about-desc-card">
+              <h4 class="about-desc-name">{people[0].name}</h4>
+              <p class="about-desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+
+          <!-- Glow -->
+          <div class="stack-glow" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .stack-wrapper {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    display: flex;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-copy {
+    display: flex;
+    min-height: auto;
+    flex-direction: column;
+  }
+
+  .about-stats {
+    position: relative;
+    z-index: 20;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    width: min(100%, 560px);
+    margin-top: 0.75rem;
+    padding: 1rem 1.125rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    background: rgba(10, 10, 10, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  }
+
+  .about-stat {
+    min-width: 0;
+  }
+
+  /* Container wrapper para cada foto */
+  .stack-img {
+    position: absolute;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+    max-width: none;
+    transition: 
+      z-index 0s,
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      filter 0.4s ease;
+    will-change: transform, filter;
+  }
+
+  /* Luz de Aura Dourada Traseira (Backlight de Destaque) */
+  .member-aura-glow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 140%;
+    height: 140%;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(230, 192, 0, 0.12) 0%,
+      rgba(230, 192, 0, 0.03) 40%,
+      transparent 70%
+    );
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+    transition: 
+      opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+
+  /* Card de DescriÃ§Ã£o de alta costura - HUD Limpo e LegÃ­vel */
+  .about-desc-card {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%) translateY(12px);
+    width: 280px; /* Mais largo para melhor distribuiÃ§Ã£o de texto */
+    background: #0d0d0d; /* Fundo preto sÃ³lido para contraste impecÃ¡vel */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid var(--color-accent); /* Barra vertical amarela oficial na lateral esquerda */
+    border-radius: 8px;
+    padding: 16px 20px;
+    opacity: 0;
+    pointer-events: none; /* Deixa cliques e drags passarem direto para o container wrapper */
+    transition: 
+      opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.7),
+      0 0 20px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+  }
+
+  /* EFEITOS DE HOVER EXCLUSIVOS PARA DESKTOP COM SUPORTE A HOVER */
+  @media (hover: hover) and (min-width: 1024px) {
+    /* Ao passar o mouse, a foto ganha zoom suave, vem totalmente para a frente e brilha em dourado */
+    .stack-img:hover {
+      z-index: 50 !important;
+      transform: scale(1.04);
+      /* Adiciona um leve drop-shadow dourado sobre o contorno do corpo da pessoa */
+      filter: 
+        drop-shadow(0 0 15px rgba(230, 192, 0, 0.15))
+        drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+    }
+
+    /* Expande e acende a aura amarela traseira de forma mÃ¡gica! */
+    .stack-img:hover .member-aura-glow {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    /* Exibe o card suavemente no hover */
+    .stack-img:hover .about-desc-card {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  /* Nome do Membro */
+  .about-desc-name {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  /* Bio do Membro (AltÃ­ssima legibilidade) */
+  .about-desc-text {
+    font-family: var(--font-body);
+    font-size: 12px;
+    line-height: 1.6;
+    color: #c8c8c8; /* Cinza claro com Ã³timo contraste sobre o fundo preto */
+    font-weight: 400;
+  }
+
+  .stack-back-left {
+    left: -15%;
+    top: -15px;
+    width: 280px;
+    z-index: 1;
+  }
+
+  .stack-back-right {
+    right: -15%;
+    top: 20px;
+    width: 260px;
+    z-index: 2;
+  }
+
+  .stack-front {
+    left: auto;
+    right: -10%;
+    bottom: -30px;
+    width: 400px;
+    z-index: 3;
+  }
+
+  .stack-glow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(230, 192, 0, 0.15) 0%,
+      transparent 60%
+    );
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  @media (min-width: 1024px) {
+    .about-copy {
+      min-height: 700px;
+      padding-bottom: 3.75rem;
+    }
+    .about-copy .about-stats {
+      margin-top: auto;
+    }
+    .stack-wrapper {
+      height: 700px;
+      margin-right: -15%;
+    }
+    .stack-back-left {
+      width: 580px;
+      left: -37.5%;
+      top: 34px;
+      right: auto;
+      bottom: auto;
+    }
+    .stack-back-right {
+      width: 553px;
+      left: 23.6%;
+      top: -122px;
+      right: auto;
+      bottom: auto;
+    }
+    .stack-front {
+      width: 568px;
+      left: 9.2%;
+      top: 61px;
+      right: auto;
+      bottom: auto;
+    }
+    .stack-glow {
+      width: 800px;
+      height: 800px;
+    }
+  }
+
+  /* REMOVE COMPLETAMENTE OS CARDS E INTERAÃ‡Ã•ES DE HOVER EM CELULARES E TABLETS */
+  @media (max-width: 1023px) {
+    .about-desc-card {
+      display: none !important;
+    }
+    .member-aura-glow {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .about-stats {
+      width: 100%;
+      margin-top: 0.5rem;
+      gap: 0.5rem;
+      padding: 0.875rem;
+    }
+    .about-stats p:first-child {
+      font-size: 1.75rem;
+    }
+    .about-stats p:last-child {
+      font-size: 0.625rem;
+      letter-spacing: 0.12em;
+    }
+    .stack-wrapper {
+      height: 500px;
+    }
+    .stack-back-left {
+      left: -36.6%;
+      top: -59px;
+      width: 575px;
+      right: auto;
+      bottom: auto;
+    }
+    .stack-back-right {
+      left: 13.0%;
+      top: -224px;
+      width: 570px;
+      right: auto;
+      bottom: auto;
+    }
+    .stack-front {
+      left: 1.6%;
+      top: 24px;
+      width: 478px;
+      right: auto;
+      bottom: auto;
+    }
+  }
+</style>
+
+<script>
+  const countElements = document.querySelectorAll<HTMLElement>("[data-count]");
+
+  if (countElements.length) {
+    const formatCount = (value: number) => value.toLocaleString("pt-BR");
+
+    const animateCount = (element: HTMLElement) => {
+      const target = Number(element.dataset.count || 0);
+      const suffix = element.dataset.suffix || "";
+      const duration = target > 1000 ? 1700 : 1200;
+      const startTime = performance.now();
+
+      const step = (now: number) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(target * eased);
+        element.textContent = `${formatCount(current)}${suffix}`;
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      };
+
+      requestAnimationFrame(step);
+    };
+
+    const countObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          animateCount(entry.target as HTMLElement);
+          countObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.45 }
+    );
+
+    countElements.forEach((element) => countObserver.observe(element));
+  }
+</script>
+

@@ -7,28 +7,28 @@ const milestones = [
     title: "A Semente",
     description:
       "A ideia nasce dentro do Students For Liberty Brasil (SFL) como um projeto para disputar espaços no movimento estudantil tradicionalmente dominado pela esquerda.",
-    image: "/img/history/4f163615-a1a9-4f75-8ece-3b722ffde128.JPG",
+    image: "/img/history/4f163615-a1a9-4f75-8ece-3b722ffde128.webp",
   },
   {
     year: "2020",
     title: "Fundação & Missão",
     description:
       "Em 4 de julho de 2020, o movimento surge com a missão de combater as injustiças no movimento estudantil tradicional e acabar com o monopólio histórico do PCdoB na União Nacional dos Estudantes (UNE).",
-    image: "/img/history/5e00117d-9fde-4411-bd2d-25cf148a775f.JPG",
+    image: "/img/history/5e00117d-9fde-4411-bd2d-25cf148a775f.webp",
   },
   {
     year: "2021",
     title: "Frente pela Liberdade",
     description:
       'As chapas da "Frente pela Liberdade" marcam presença corajosa no 58º Congresso da UNE, desafiando o status quo e levando as ideias de liberdade ao maior congresso estudantil do país.',
-    image: "/img/history/7df6521a-ba72-470b-aff8-292fd209f4aa.JPG",
+    image: "/img/history/7df6521a-ba72-470b-aff8-292fd209f4aa.webp",
   },
   {
     year: "2022+",
     title: "Juventude Livre",
     description:
       "O movimento evolui para Juventude Livre (JL), consolidando-se como a principal força liberal estudantil do Brasil, com mais de 6 mil membros em todo o território nacional.",
-    image: "/img/history/IMG_9972.jpeg",
+    image: "/img/history/IMG_9972.webp",
   },
 ];
 ---
@@ -96,9 +96,12 @@ const milestones = [
       <!-- Scroll Indicator Image: Logo Lamparina Amarela oficial com fundo transparente nativo -->
       <img
         class="timeline-ball pointer-events-none"
-        src="/Logo_Lamparina_Amarela.png"
+        src="/Logo_Lamparina_Amarela.webp"
         alt="Lamparina Juventude Livre"
         aria-hidden="true"
+        width="96"
+        height="96"
+        loading="lazy"
       />
 
       <!-- Timeline Cards Flex Grid -->
@@ -148,6 +151,8 @@ const milestones = [
                       alt={item.title}
                       class="w-full h-[220px] md:h-[280px] object-cover rounded-[calc(1.5rem-0.5rem)] select-none pointer-events-none history-photo"
                       loading="lazy"
+                      width="580"
+                      height="280"
                     />
                   </div>
                 </div>
@@ -183,7 +188,7 @@ const milestones = [
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("/imgpessoas/montagem.jpg");
+    background-image: url("/imgpessoas/montagem.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

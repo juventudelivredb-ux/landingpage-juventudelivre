@@ -1,10 +1,10 @@
-﻿---
+---
 /* About Section â€” Editorial split: text left, stacked photos right */
 
 const people = [
-  { name: "Gabriele Benini", src: "/gabriele-benini.png" },
-  { name: "João Pedro Porto", src: "/joao-pedro-porto.png" },
-  { name: "Ramon Schuindt", src: "/ramon-schuindt.png" },
+  { name: "Gabriele Benini", src: "/gabriele-benini.webp" },
+  { name: "João Pedro Porto", src: "/joao-pedro-porto.webp" },
+  { name: "Ramon Schuindt", src: "/ramon-schuindt.webp" },
 ];
 ---
 
@@ -106,9 +106,11 @@ const people = [
               alt={people[2].name}
               class="w-full h-auto block pointer-events-none select-none relative z-10"
               loading="lazy"
+              width="580"
+              height="725"
             />
             <div class="about-desc-card">
-              <h4 class="about-desc-name">{people[2].name}</h4>
+              <h3 class="about-desc-name">{people[2].name}</h3>
               <p class="about-desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
@@ -123,9 +125,11 @@ const people = [
               class="w-full h-auto block pointer-events-none select-none relative z-10"
               loading="lazy"
               style="transform: scaleX(-1);"
+              width="580"
+              height="725"
             />
             <div class="about-desc-card">
-              <h4 class="about-desc-name">{people[1].name}</h4>
+              <h3 class="about-desc-name">{people[1].name}</h3>
               <p class="about-desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
@@ -138,9 +142,11 @@ const people = [
               alt={people[0].name}
               class="w-full h-auto block pointer-events-none select-none relative z-10"
               loading="lazy"
+              width="580"
+              height="725"
             />
             <div class="about-desc-card">
-              <h4 class="about-desc-name">{people[0].name}</h4>
+              <h3 class="about-desc-name">{people[0].name}</h3>
               <p class="about-desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>

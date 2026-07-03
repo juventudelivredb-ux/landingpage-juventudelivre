@@ -9,11 +9,15 @@
       id="hero-video"
       class="hero-video"
       src="/hero-video.mp4"
+      poster="/hero-poster.webp"
       muted
       playsinline
       preload="auto"
       aria-hidden="true"
-    ></video>
+    >
+      <source src="/hero-video.webm" type="video/webm" />
+      <source src="/hero-video.mp4" type="video/mp4" />
+    </video>
 
     <!-- Layered overlays for cinematic depth -->
     <div class="hero-overlay" aria-hidden="true"></div>
@@ -46,7 +50,7 @@
         <!-- CTA — button-in-button -->
         <a
           id="junte-se"
-          href="https://linktr.ee/juventude.livre"
+          href="http://localhost:5173/cadastro"
           target="_blank"
           rel="noopener noreferrer"
           class="hero-cta group"

@@ -8,7 +8,7 @@
     <video
       id="hero-video"
       class="hero-video"
-      src="/hero-video.mp4"
+      src="https://github.com/juventudelivre/landingpage-juventudelivre/releases/download/media-v1/hero-video.mp4"
       poster="/hero-poster.webp"
       muted
       playsinline
@@ -16,9 +16,11 @@
       aria-hidden="true"
     >
       <source src="/hero-video.webm" type="video/webm" />
-      <source src="/hero-video.mp4" type="video/mp4" />
+      <source
+        src="https://github.com/juventudelivre/landingpage-juventudelivre/releases/download/media-v1/hero-video.mp4"
+        type="video/mp4"
+      />
     </video>
-
     <!-- Layered overlays for cinematic depth -->
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-vignette" aria-hidden="true"></div>
@@ -27,24 +29,21 @@
     <div class="hero-content section-container">
       <div class="hero-content-inner">
         <!-- Eyebrow tag -->
-        <span class="hero-eyebrow">
-          Movimento Estudantil Liberal
-        </span>
+        <span class="hero-eyebrow"> Movimento Estudantil Liberal </span>
 
         <!-- H1 — massive display -->
-        <h1
-          id="hero-heading"
-          class="font-heading hero-h1"
-        >
+        <h1 id="hero-heading" class="font-heading hero-h1">
           FAREMOS<br />
           <span class="text-accent hero-h1-accent">HISTÓRIA!</span>
         </h1>
 
         <!-- Subtitle -->
         <p class="hero-subtitle">
-          Somos a <strong class="text-white font-semibold">Juventude Livre</strong>. O principal movimento
-          político estudantil liberal do Brasil, lutando por liberdade e representatividade dentro das
-          escolas e universidades.
+          Somos a <strong class="text-white font-semibold"
+            >Juventude Livre</strong
+          >. O principal movimento político estudantil liberal do Brasil,
+          lutando por liberdade e representatividade dentro das escolas e
+          universidades.
         </p>
 
         <!-- CTA — button-in-button -->
@@ -56,9 +55,21 @@
           class="hero-cta group"
         >
           <span>Faça parte dos mais de 6 mil membros</span>
-          <span class="hero-cta-icon group-hover:translate-x-0.5 group-hover:-translate-y-px group-hover:scale-105">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+          <span
+            class="hero-cta-icon group-hover:translate-x-0.5 group-hover:-translate-y-px group-hover:scale-105"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
             </svg>
           </span>
         </a>
@@ -67,7 +78,9 @@
       <!-- Scroll hint — right side -->
       <div class="hero-scroll-hint" aria-hidden="true">
         <div class="hero-scroll-line"></div>
-        <span class="text-[10px] text-white/30 tracking-[0.2em] uppercase mt-2">Scroll</span>
+        <span class="text-[10px] text-white/30 tracking-[0.2em] uppercase mt-2"
+          >Scroll</span
+        >
       </div>
     </div>
   </div>
@@ -221,18 +234,34 @@
   .hero-scroll-line {
     width: 1px;
     height: 60px;
-    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
     animation: scrollPulse 2s ease-in-out infinite;
   }
 
   @keyframes scrollPulse {
-    0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
-    50% { opacity: 1; transform: scaleY(1); }
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scaleY(0.6);
+    }
+    50% {
+      opacity: 1;
+      transform: scaleY(1);
+    }
   }
 
   @media (min-width: 768px) {
-    .hero-scroll-hint { display: flex; }
-    .hero-subtitle { font-size: 1.0625rem; }
+    .hero-scroll-hint {
+      display: flex;
+    }
+    .hero-subtitle {
+      font-size: 1.0625rem;
+    }
   }
 
   @media (max-width: 767px) {
@@ -247,8 +276,12 @@
 </style>
 
 <script>
-  const video = document.getElementById("hero-video") as HTMLVideoElement | null;
-  const wrapper = document.querySelector(".hero-scroll-wrapper") as HTMLElement | null;
+  const video = document.getElementById(
+    "hero-video",
+  ) as HTMLVideoElement | null;
+  const wrapper = document.querySelector(
+    ".hero-scroll-wrapper",
+  ) as HTMLElement | null;
 
   if (video && wrapper) {
     let targetX = 0;
@@ -276,7 +309,7 @@
     const onReady = () => {
       const duration = video.duration;
       let lastTime = -1;
-      
+
       const renderLoop = () => {
         if (duration && !isNaN(duration)) {
           const targetTime = scrollProgress * duration;
@@ -290,9 +323,9 @@
         // Interpolação suave para o movimento do mouse
         currentX += (targetX - currentX) * 0.08;
         currentY += (targetY - currentY) * 0.08;
-        
+
         video.style.transform = `scale(1.4) translate(${currentX}px, ${currentY}px)`;
-        
+
         requestAnimationFrame(renderLoop);
       };
 
